@@ -1,0 +1,37 @@
+[
+  {
+    "id": "1",
+    "name": "The Rosary",
+    "file": "rosary.pdf"
+  },
+  {
+    "id": "2",
+    "name": "Novena To St.Pius",
+    "file": "NovenatoStPius.pdf"
+  },
+  {
+    "id": "3",
+    "name": "Novena To St.Anthony",
+    "file": "NovenaToStAnthony.pdf"
+  },
+  {
+    "id": "4",
+    "name": "Our Lady Of Perpetual Succour",
+    "file": "novenatomary.pdf"
+  },
+  {
+    "id": "5",
+    "name": "The Divine Mercy Chaplet",
+    "file": "DivineMercy_Chaplet.pdf"
+  },
+  {
+    "id": "6",
+    "name": "The Way Of The Cross",
+    "file": "WayOfTheCross.pdf"
+  },
+  {
+    "id": "7",
+    "name": "Kurushinte Vazhi - Malayalam",
+    "file": "KurishinteVazhi.pdf"
+  }
+]

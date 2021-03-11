@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1",
+    "name": "Archdiocese Of Mumbai",
+    "website": "https://www.archdioceseofbombay.org/",
+    "youtube": "UC7E0M_kMNOlu04svSFyRy4g"
+  },
+  {
+    "id": "2",
+    "name": "Vatican English News",
+    "website": "https://www.vaticannews.va/en.html",
+    "youtube": "UCxIsefyl9g9A5SGWA4FvGIA"
+  },
+  {
+    "id": "3",
+    "name": "St. Michael's Mahim",
+    "website": null,
+    "youtube": "UCFtdNCmrQZCCEgxiIPaSA9w"
+  },
+  {
+    "id": "4",
+    "name": "Shrine of the Infant Jesus Nashik",
+    "website": "https://infantjesusnashik.org/",
+    "youtube": "UCKvmSLoLls_Ub7GLyigiNIg"
+  },
+  {
+    "id": "5",
+    "name": "MOUNT MARY BASILICA Bandra",
+    "website": "http://www.mountmarybasilicabandra.in/",
+    "youtube": null
+  },
+  {
+    "id": "6",
+    "name": "Our Lady of Good Health Velankanni",
+    "website": "http://www.vailankannishrine.net/",
+    "youtube": "UCT8CLAdT8g6HvxMmu5RSFCA"
+  },
+  {
+    "id": "7",
+    "name": "Tabor Ashram",
+    "website": "http://taborashram.org/",
+    "youtube": "UC0hd8wCaxCqSEanWsd_gk9w"
+  }
+]
