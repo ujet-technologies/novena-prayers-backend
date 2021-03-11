@@ -4,7 +4,7 @@ from base64 import b64encode
 from urllib.parse import urlencode
 
 import requests
-from flask import Flask
+from flask import Flask, send_from_directory
 from flask_cors import CORS
 
 
@@ -14,22 +14,19 @@ CORS(app)
 
 @app.route("/ping")
 def ping():
-    """ health check """
+    """ health check api """
     return "pong"
 
 
-@app.route("/docs/<pdf>")
-def doc(pdf):
-    """ api to retrieve pdf documents as base64 encoded strings """
-    with open(f"./docs/{pdf}", "rb") as f:
-        data = f.read()
-        data = b64encode(data).decode("utf-8")
-    return f"data:application/pdf;base64,{data}"
+@app.route("/docs/<path:filename>")
+def docs(filename):
+    """ serve docs from folder """
+    return send_from_directory("docs", filename, as_attachment=True)
 
 
-@app.route("/youtube/<channel>")
+@app.route("/channels/<channel>")
 def youtube(channel):
-    """ api to retrieve latest videos of the channel specified """
+    """ retrieve latest videos of the given youtube channel """
     params = urlencode({
         "key": os.environ["API_KEY"],
         "part": "snippet",
