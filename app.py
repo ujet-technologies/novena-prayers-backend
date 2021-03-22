@@ -4,7 +4,7 @@ from base64 import b64encode
 from urllib.parse import urlencode
 
 import requests
-from flask import Flask, send_from_directory
+from flask import Flask, send_from_directory, jsonify
 from flask_cors import CORS
 
 
@@ -27,17 +27,33 @@ def docs(filename):
 @app.route("/channels/<channel>")
 def youtube(channel):
     """ retrieve latest videos of the given youtube channel """
+
+    # fetch upload playlist
+    params = urlencode({
+        "id": channel,
+        "key": os.environ["API_KEY"],
+        "part": "contentDetails",
+        
+    })
+    url = f"https://youtube.googleapis.com/youtube/v3/channels?{params}"
+    response = requests.get(url)
+    response.raise_for_status()
+    response = response.json()
+
+    # fetch playlist
     params = urlencode({
         "key": os.environ["API_KEY"],
         "part": "snippet",
-        "order": "date",
-        "maxResults": 25,
-        "channelId": channel,
+        "maxResults": "50",
+        "playlistId": response["items"][0]["contentDetails"]["relatedPlaylists"]["uploads"],
+        
     })
-    url = f"https://youtube.googleapis.com/youtube/v3/search?{params}"
+    url = f"https://youtube.googleapis.com/youtube/v3/playlistItems?{params}"
     response = requests.get(url)
     response.raise_for_status()
-    return response.json()
+    response = response.json()
+
+    return jsonify(response)
 
 
 if __name__ == "__main__":
